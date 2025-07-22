@@ -15,7 +15,6 @@
         "slide_item_GJUjrM": {
           "type": "_slide-item",
           "settings": {
-            "image": "shopify://shop_images/slider-01.jpg",
             "url": "",
             "banner_target": false,
             "color_scheme": "scheme-1",
@@ -100,6 +99,7 @@
                 "open_in_new_tab": false,
                 "full_width": false,
                 "btn_style": "hdt-btn-hover-accent",
+                "size": "m",
                 "font_weight": "semibold",
                 "font_size_btn": 14,
                 "padding_btn": 30,
@@ -125,7 +125,6 @@
         "slide_item_GJUjrL": {
           "type": "_slide-item",
           "settings": {
-            "image": "shopify://shop_images/slide3.webp",
             "url": "",
             "banner_target": false,
             "color_scheme": "",
@@ -210,6 +209,7 @@
                 "open_in_new_tab": false,
                 "full_width": false,
                 "btn_style": "hdt-btn-hover-accent",
+                "size": "m",
                 "font_weight": "semibold",
                 "font_size_btn": 14,
                 "padding_btn": 30,
@@ -235,7 +235,7 @@
         "slide_item_GJUjrO": {
           "type": "_slide-item",
           "settings": {
-            "image": "shopify://shop_images/slide2.webp",
+            "image": "shopify://shop_images/sample-banner.png",
             "url": "",
             "banner_target": false,
             "color_scheme": "",
@@ -320,6 +320,7 @@
                 "open_in_new_tab": false,
                 "full_width": false,
                 "btn_style": "hdt-btn-hover-accent",
+                "size": "m",
                 "font_weight": "semibold",
                 "font_size_btn": 14,
                 "padding_btn": 30,
@@ -386,7 +387,6 @@
           "type": "_collection_manual-item",
           "settings": {
             "collection": "accessories",
-            "image": "shopify://shop_images/1_2a9471ff-024d-40f7-a4b3-a15a058ff334_2022-03-24.jpg",
             "title": "Women",
             "collection_link": "",
             "column_width": "6",
@@ -402,7 +402,6 @@
           "type": "_collection_manual-item",
           "settings": {
             "collection": "accessories",
-            "image": "shopify://shop_images/2_2022-03-02.jpg",
             "title": "Accessories",
             "collection_link": "",
             "column_width": "3",
@@ -418,7 +417,6 @@
           "type": "_collection_manual-item",
           "settings": {
             "collection": "watch",
-            "image": "shopify://shop_images/4_f8612457-70c3-4a0f-b808-0f322a71741c_2022-03-02.jpg",
             "title": "Watches",
             "collection_link": "",
             "column_width": "3",
@@ -434,7 +432,6 @@
           "type": "_collection_manual-item",
           "settings": {
             "collection": "footwear",
-            "image": "shopify://shop_images/3_2022-03-02.jpg",
             "title": "Footwear",
             "collection_link": "",
             "column_width": "3",
@@ -609,6 +606,8 @@
             "liquid_HiCy9a": {
               "type": "_liquid",
               "settings": {
+                "option_type": "liquid",
+                "page": "",
                 "text": "LOOKBOOK {{ 'now' | date: \"%Y\"}}",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
@@ -674,7 +673,6 @@
               "static": true,
               "settings": {
                 "source": "image",
-                "image": "shopify://shop_images/5_2022-03-02.jpg",
                 "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
               },
               "blocks": {}
@@ -756,7 +754,6 @@
               "static": true,
               "settings": {
                 "source": "image",
-                "image": "shopify://shop_images/6_2022-03-02_50f70a60-cd60-4f21-a6c5-9cac17242994.jpg",
                 "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
               },
               "blocks": {}
@@ -1005,7 +1002,6 @@
         "lookbook_LWng87": {
           "type": "_lookbook",
           "settings": {
-            "image": "shopify://shop_images/ins8_2022-03-02.jpg",
             "img_effect": "zoom",
             "b_effect": "none"
           },
@@ -1037,7 +1033,6 @@
         "lookbook_mYkjki": {
           "type": "_lookbook",
           "settings": {
-            "image": "shopify://shop_images/ins7_2022-03-02.jpg",
             "img_effect": "zoom",
             "b_effect": "none"
           },
@@ -1069,7 +1064,6 @@
         "lookbook_VqJTGD": {
           "type": "_lookbook",
           "settings": {
-            "image": "shopify://shop_images/ins6_2022-03-02.jpg",
             "img_effect": "zoom",
             "b_effect": "none"
           },
@@ -1121,7 +1115,6 @@
         "lookbook_NQi7Xf": {
           "type": "_lookbook",
           "settings": {
-            "image": "shopify://shop_images/ins5_2022-03-02.jpg",
             "img_effect": "zoom",
             "b_effect": "none"
           },
@@ -1153,7 +1146,6 @@
         "lookbook_zNfrP4": {
           "type": "_lookbook",
           "settings": {
-            "image": "shopify://shop_images/ins4_2022-03-02.jpg",
             "img_effect": "zoom",
             "b_effect": "none"
           },
@@ -1185,7 +1177,6 @@
         "lookbook_DaNAAh": {
           "type": "_lookbook",
           "settings": {
-            "image": "shopify://shop_images/ins3_2022-03-02.jpg",
             "img_effect": "zoom",
             "b_effect": "none"
           },
@@ -1217,7 +1208,6 @@
         "lookbook_AzchnW": {
           "type": "_lookbook",
           "settings": {
-            "image": "shopify://shop_images/ins1_2022-03-02.jpg",
             "img_effect": "zoom",
             "b_effect": "none"
           },
@@ -1249,7 +1239,6 @@
         "lookbook_MwHq4E": {
           "type": "_lookbook",
           "settings": {
-            "image": "shopify://shop_images/ins2_2022-03-02.jpg",
             "img_effect": "zoom",
             "b_effect": "none"
           },
