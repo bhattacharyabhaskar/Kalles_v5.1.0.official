@@ -1,6 +1,608 @@
+{% doc %}
+  @prompt
+    Create a product add-ons section that displays related products or accessories as add-ons below the main product. Include one-click functionality for customers to add these add-ons to their cart along with the main product. The section should be visually appealing with product images, titles, prices, and prominent "Add" buttons for each add-on item.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-addons-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    margin: 20px 0;}
+
+  .ai-product-addons__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .ai-product-addons__title-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .ai-product-addons__subtitle-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+    font-size: {{ block.settings.subtitle_size }}px;
+    margin: 0;
+  }
+
+  .ai-product-addons__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .ai-product-addons__item-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border: 1px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .ai-product-addons__item-{{ ai_gen_id }}:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-product-addons__item-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 12px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-product-addons__item-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-addons__item-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-product-addons__item-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+  }
+
+  .ai-product-addons__item-title-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+
+  .ai-product-addons__item-price-{{ ai_gen_id }} {
+    color: {{ block.settings.price_color }};
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+
+  .ai-product-addons__item-button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+  }
+
+  .ai-product-addons__item-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-product-addons__item-button-{{ ai_gen_id }}:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .ai-product-addons__item-button-{{ ai_gen_id }}.added {
+    background-color: {{ block.settings.success_color }};
+  }
+
+  .ai-product-addons__bundle-section-{{ ai_gen_id }} {
+    border-top: 1px solid {{ block.settings.card_border_color }};
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .ai-product-addons__bundle-button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.bundle_button_color }};
+    color: {{ block.settings.bundle_button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .ai-product-addons__bundle-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.bundle_button_hover_color }};
+  }
+
+  .ai-product-addons__bundle-button-{{ ai_gen_id }}:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .ai-product-addons__loading-{{ ai_gen_id }} {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-product-addons__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .ai-product-addons__item-{{ ai_gen_id }} {
+      padding: 12px;
+    }
+
+    .ai-product-addons__item-image-{{ ai_gen_id }} {
+      height: 120px;
+    }
+  }
+{% endstyle %}
+
+<product-addons-{{ ai_gen_id }}
+  class="ai-product-addons-{{ ai_gen_id }}"
+  data-main-product-id="{{ product.id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-product-addons__header-{{ ai_gen_id }}">
+    {% if block.settings.title != blank %}
+      <h3 class="ai-product-addons__title-{{ ai_gen_id }}">{{ block.settings.title }}</h3>
+    {% endif %}
+    {% if block.settings.subtitle != blank %}
+      <p class="ai-product-addons__subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  <div class="ai-product-addons__grid-{{ ai_gen_id }}">
+    {% for i in (1..6) %}
+      {% assign product_key = 'addon_product_' | append: i %}
+      {% assign addon_product = block.settings[product_key] %}
+      {% if addon_product != blank %}
+        <div class="ai-product-addons__item-{{ ai_gen_id }}" data-product-id="{{ addon_product.id }}">
+          <div class="ai-product-addons__item-image-{{ ai_gen_id }}">
+            {% if addon_product.featured_image %}
+              <img
+                src="{{ addon_product.featured_image | image_url: width: 300}}"
+                alt="{{ addon_product.featured_image.alt | escape }}"
+                width="300"
+                height="300"
+                loading="lazy"
+              >
+            {% else %}
+              <div class="ai-product-addons__item-image-placeholder-{{ ai_gen_id }}">
+                {{ 'product-apparel-1' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+          
+          <h4 class="ai-product-addons__item-title-{{ ai_gen_id }}">{{ addon_product.title }}</h4>
+          
+          <div class="ai-product-addons__item-price-{{ ai_gen_id }}">
+            {{ addon_product.price | money }}
+          </div>
+          
+          <button
+            class="ai-product-addons__item-button-{{ ai_gen_id }}"
+            data-variant-id="{{ addon_product.selected_or_first_available_variant.id }}"
+            data-product-title="{{ addon_product.title | escape }}"
+            {% unless addon_product.available %}disabled{% endunless %}
+          >
+            {% if addon_product.available %}
+              Add to Cart
+            {% else %}
+              Sold Out
+            {% endif %}
+          </button>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if block.settings.show_bundle_option %}
+    <div class="ai-product-addons__bundle-section-{{ ai_gen_id }}">
+      <button class="ai-product-addons__bundle-button-{{ ai_gen_id }}">
+        Add All to Cart
+      </button>
+    </div>
+  {% endif %}
+</product-addons-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductAddons{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.mainProductId = this.dataset.mainProductId;
+        this.selectedAddons = new Set();
+      }
+
+      connectedCallback() {
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        const addButtons = this.querySelectorAll('.ai-product-addons__item-button-{{ ai_gen_id }}');
+        const bundleButton = this.querySelector('.ai-product-addons__bundle-button-{{ ai_gen_id }}');
+
+        addButtons.forEach(button => {
+          button.addEventListener('click', (e) => this.handleAddToCart(e));
+        });
+
+        if (bundleButton) {
+          bundleButton.addEventListener('click', () => this.handleBundleAddToCart());
+        }
+      }
+
+      async handleAddToCart(event) {
+        const button = event.target;
+        const variantId = button.dataset.variantId;
+        const productTitle = button.dataset.productTitle;
+
+        if (!variantId || button.disabled) return;
+
+        this.setButtonLoading(button, true);
+
+        try {
+          const response = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              items: [{
+                id: variantId,
+                quantity: 1
+              }]
+            })
+          });
+
+          if (response.ok) {
+            this.showButtonSuccess(button);
+            this.selectedAddons.add(variantId);
+            this.dispatchCartUpdateEvent();
+          } else {
+            throw new Error('Failed to add to cart');
+          }
+        } catch (error) {
+          console.error('Error adding to cart:', error);
+          this.showButtonError(button);
+        } finally {
+          this.setButtonLoading(button, false);
+        }
+      }
+
+      async handleBundleAddToCart() {
+        const bundleButton = this.querySelector('.ai-product-addons__bundle-button-{{ ai_gen_id }}');
+        const availableButtons = this.querySelectorAll('.ai-product-addons__item-button-{{ ai_gen_id }}:not([disabled])');
+        if (availableButtons.length === 0) return;
+
+        this.setButtonLoading(bundleButton, true);
+
+        const items = Array.from(availableButtons).map(button => ({
+          id: button.dataset.variantId,
+          quantity: 1
+        }));
+
+        try {
+          const response = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ items })
+          });
+
+          if (response.ok) {
+            availableButtons.forEach(button => {
+              this.showButtonSuccess(button);
+              this.selectedAddons.add(button.dataset.variantId);
+            });
+            this.showButtonSuccess(bundleButton, 'All Added!');
+            this.dispatchCartUpdateEvent();
+          } else {
+            throw new Error('Failed to add bundle to cart');
+          }
+        } catch (error) {
+          console.error('Error adding bundle to cart:', error);
+          this.showButtonError(bundleButton);
+        } finally {
+          this.setButtonLoading(bundleButton, false);
+        }
+      }
+
+      setButtonLoading(button, isLoading) {
+        if (isLoading) {
+          button.disabled = true;
+          button.originalText = button.textContent;
+          button.textContent = 'Adding...';this.classList.add('ai-product-addons__loading-{{ ai_gen_id }}');
+        } else {
+          button.disabled = false;
+          this.classList.remove('ai-product-addons__loading-{{ ai_gen_id }}');
+        }
+      }
+
+      showButtonSuccess(button, customText = null) {
+        button.classList.add('added');
+        button.textContent = customText || 'Added!';
+        
+        setTimeout(() => {
+          button.classList.remove('added');button.textContent = button.originalText || 'Add to Cart';
+        }, 2000);
+      }
+
+      showButtonError(button) {
+        const originalText = button.textContent;
+        button.textContent = 'Error';
+        button.style.backgroundColor = '#dc3545';
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.style.backgroundColor = '';
+        }, 2000);
+      }
+
+      dispatchCartUpdateEvent() {document.dispatchEvent(new CustomEvent('cart:updated'));
+        if (window.theme && window.theme.cart) {
+          window.theme.cart.getCart();
+        }
+      }
+    }
+
+    customElements.define('product-addons-{{ ai_gen_id }}', ProductAddons{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Product Add-ons",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "Complete Your Look"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Add these recommended items to enhance your purchase"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bundle_option",
+      "label": "Show'Add All' button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Add-on Products"
+    },
+    {
+      "type": "product",
+      "id": "addon_product_1",
+      "label": "Add-on product 1"
+    },
+    {
+      "type": "product",
+      "id": "addon_product_2",
+      "label": "Add-on product 2"
+    },
+    {
+      "type": "product",
+      "id": "addon_product_3",
+      "label": "Add-on product 3"
+    },
+    {
+      "type": "product",
+      "id": "addon_product_4",
+      "label": "Add-on product 4"
+    },
+    {
+      "type": "product",
+      "id": "addon_product_5",
+      "label": "Add-on product 5"
+    },
+    {
+      "type": "product",
+      "id": "addon_product_6",
+      "label": "Add-on product 6"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border color",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Add button color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Add button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Add button hover color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "bundle_button_color",
+      "label": "Bundle button color",
+      "default": "#007acc"
+    },
+    {
+      "type": "color",
+      "id": "bundle_button_text_color",
+      "label": "Bundle button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "bundle_button_hover_color",
+      "label": "Bundle button hover color",
+      "default": "#005999"
+    },
+    {
+      "type": "color",
+      "id": "success_color",
+      "label": "Success color",
+      "default": "#28a745"
+    },
+    {
+      "type": "header",
+      "content": "Sizing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Section border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Card border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Add-ons"
+    }
+  ]
+}
 {% endschema %}
