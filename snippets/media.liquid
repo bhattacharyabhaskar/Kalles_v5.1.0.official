@@ -31,7 +31,7 @@
 -%}
 
 {%- comment -%} Eager load the first image only {%- endcomment -%}
-{% if forloop.index == 1 %}
+{% if is_first %}
   {% assign load_attr = 'eager' %}
 {% else %}
   {% assign load_attr = 'lazy' %}
