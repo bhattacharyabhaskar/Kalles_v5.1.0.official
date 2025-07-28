@@ -532,6 +532,27 @@
     "footer_ziwVXA": {
       "type": "footer",
       "blocks": {
+        "footer_column_Tyii8F": {
+          "type": "_footer-column",
+          "name": "t:blocks.footer_column.name",
+          "settings": {
+            "col_heading": "",
+            "hide_on_mobile": false,
+            "only_mobile": true,
+            "sec_heading_size": "lg",
+            "space": 30,
+            "colors_by_section": false,
+            "color_scheme": "",
+            "background_opacity": 0,
+            "width_lg": 33,
+            "width_md": 100,
+            "width": 100,
+            "padding_t": 0,
+            "padding_b": 0,
+            "padding_rate": 50
+          },
+          "blocks": {}
+        },
         "footer_column_Xk9eJH": {
           "type": "_footer-column",
           "settings": {
@@ -543,8 +564,8 @@
             "colors_by_section": false,
             "color_scheme": "",
             "background_opacity": 0,
-            "width_lg": 50,
-            "width_md": 50,
+            "width_lg": 33,
+            "width_md": 100,
             "width": 100,
             "padding_t": 0,
             "padding_b": 0,
@@ -556,7 +577,35 @@
               "settings": {
                 "option_type": "liquid",
                 "page": "",
-                "text": "<span class=\"hdt-text-secondary\">All Rights Reserved © 2025 <a href=\"https://www.indyvogue.com\" class=\"hdt-text-primary\" aria-describedby=\"a11y-external-message\">IndyVogue LLC</a> </span>",
+                "text": "<div style=\"text-align: center;\">\n  <span class=\"hdt-text-secondary\">\n    All Rights Reserved © <span id=\"currentYear\"></span> \n    <a href=\"https://www.indyvogue.com\" class=\"hdt-text-primary\" aria-describedby=\"a11y-external-message\">\n      IndyVogue LLC\n    </a>\n  </span>\n</div>\n\n<script>\n  document.getElementById('currentYear').textContent = new Date().getFullYear();\n</script>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "font_weight": "normal",
+                "text_color": "hdt-s-text",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            },
+            "payment_icons_FeD6jQ": {
+              "type": "_payment_icons",
+              "name": "t:blocks.payment.name",
+              "settings": {
+                "svg": "visa, master, american_express, discover, apple_pay, paypal, amazon, google_pay, shopify_pay",
+                "height": 21
+              },
+              "blocks": {}
+            },
+            "liquid_6YBgkj": {
+              "type": "_liquid",
+              "name": "t:blocks.liquid.name",
+              "settings": {
+                "option_type": "liquid",
+                "page": "",
+                "text": "<p>9724 Castle Pines Dr<br>Austin, TX 78717<br></p><p>Phone: <a href=\"tel:+19133784722\" target=\"_blank\" title=\"tel:+19133784722\">+19133784722</a>(9:00 AM - 10:00 PM CST)</p><p>Email: <a href=\"mailto:sumanab@indyvogue.com\" target=\"_blank\" title=\"mailto:sumanab@indyvogue.com\">sumanab@indyvogue.com</a></p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -571,22 +620,25 @@
             }
           },
           "block_order": [
-            "custom_liquid_7gTHbP"
+            "custom_liquid_7gTHbP",
+            "payment_icons_FeD6jQ",
+            "liquid_6YBgkj"
           ]
         },
-        "footer_column_T7fBhY": {
+        "footer_column_jGhR9r": {
           "type": "_footer-column",
+          "name": "t:blocks.footer_column.name",
           "settings": {
             "col_heading": "",
             "hide_on_mobile": false,
-            "only_mobile": false,
-            "sec_heading_size": "h4",
+            "only_mobile": true,
+            "sec_heading_size": "lg",
             "space": 30,
             "colors_by_section": false,
             "color_scheme": "",
             "background_opacity": 0,
-            "width_lg": 50,
-            "width_md": 50,
+            "width_lg": 100,
+            "width_md": 100,
             "width": 100,
             "padding_t": 0,
             "padding_b": 0,
@@ -596,8 +648,9 @@
         }
       },
       "block_order": [
+        "footer_column_Tyii8F",
         "footer_column_Xk9eJH",
-        "footer_column_T7fBhY"
+        "footer_column_jGhR9r"
       ],
       "custom_css": [
         "@media (max-width: 768px) {.hdt-row {text-align: center; }}"
@@ -605,7 +658,7 @@
       "settings": {
         "sticky": false,
         "collapse": true,
-        "full_width": false,
+        "full_width": true,
         "padding_top": 20,
         "padding_bottom": 20,
         "padding_rate": 75,
