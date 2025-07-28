@@ -605,7 +605,7 @@
               "settings": {
                 "option_type": "liquid",
                 "page": "",
-                "text": "<p>9724 Castle Pines Dr<br>Austin, TX 78717<br></p><p>Phone: <a href=\"tel:+19133784722\" target=\"_blank\" title=\"tel:+19133784722\">+19133784722</a>(9:00 AM - 10:00 PM CST)</p><p>Email: <a href=\"mailto:sumanab@indyvogue.com\" target=\"_blank\" title=\"mailto:sumanab@indyvogue.com\">sumanab@indyvogue.com</a></p>",
+                "text": "<div style=\"text-align: center;\">\n  <p>\n    9724 Castle Pines Dr<br>\n    Austin, TX 78717<br>\n  </p>\n  <p>\n    Phone: \n    <a href=\"tel:+19133784722\" target=\"_blank\" title=\"tel:+19133784722\">+19133784722</a> \n    (9:00 AM - 10:00 PM CST)\n  </p>\n  <p>\n    Email: \n    <a href=\"mailto:sumanab@indyvogue.com\" target=\"_blank\" title=\"mailto:sumanab@indyvogue.com\">\n      sumanab@indyvogue.com\n    </a>\n  </p>\n</div>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
