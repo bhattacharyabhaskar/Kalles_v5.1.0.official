@@ -148,7 +148,7 @@
         "header_categories": true,
         "menu_categories": "",
         "lazy_mn_mb": true,
-        "only_click_icon": false,
+        "only_click_icon": true,
         "header_mobile_colors": "",
         "note_mobile": "<span class=\"hdt-inline-flex\" style=\"margin-bottom: 10px\">Need help ? </span><span class=\"hdt-flex hdt-flex-col hdt-text-sm hdt-text-secondary\" style=\"line-height: 24px;\"><span>Email: <b class=\"hdt-font-medium\">info@fashionshop.com</b></span><span>Phone: <b class=\"hdt-font-medium\">(212) 555-1234</b></span></span>",
         "header_transparent": false,
