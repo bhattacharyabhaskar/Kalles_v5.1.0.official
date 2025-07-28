@@ -168,12 +168,14 @@
             "mega_width": "full",
             "mega_position": "bottom",
             "mega_custom_width": 1200,
-            "mega_presets": "html",
+            "mega_presets": "mega_shop",
             "html": "",
             "page": "",
             "blog": "",
             "product_list": [],
-            "collection_list": [],
+            "collection_list": [
+              "buy-silk-mark-certified-saree"
+            ],
             "limit": 8,
             "image_ratio": "adapt_image",
             "image_size": true,
