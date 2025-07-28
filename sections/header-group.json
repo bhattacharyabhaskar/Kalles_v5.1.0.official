@@ -131,7 +131,7 @@
         "menu_position": "center",
         "menu_size": "lg",
         "menu_weight": "normal",
-        "text_transform": false,
+        "text_transform": true,
         "dropdown_arrow": true,
         "spacing_nav": 30,
         "open_event": "hover",
