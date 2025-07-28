@@ -68,7 +68,7 @@
     "show_quick_view": false,
     "show_quick_add": true,
     "show_qty": false,
-    "pr_card_alignment": "left",
+    "pr_card_alignment": "center",
     "show_rating": false,
     "pr_title_weight": "medium",
     "pr_price_weight": "normal",
