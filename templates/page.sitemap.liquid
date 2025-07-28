@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Site Map</title>
+  <link rel="stylesheet" href="{{ 'sitemap.css' | asset_url }}" type="text/css">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      padding: 10px 0;
+      text-align: center;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .sitemap-section .heading-section .breadcrumb ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sitemap-section .heading-section .breadcrumb li {
+      display: inline;
+      margin-right: 10px;
+    }
+    .sitemap-section .sitemap-area ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+    .sitemap-section .sitemap-area li {
+      margin: 5px 0;
+    }
+    a {
+      color: #025885;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #81b2ef;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="sitemap-section">
+    <div class="heading-section">
+      <div class="container">
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="https://www.indyvogue.com/">Home</a></li>
+            <li><a href="https://www.indyvogue.com/pages/about-us">Company Profile</a></li>
+          </ul>
+        </div>
+        <h3>Site Map</h3>
+      </div>
+    </div>
+    <div class="sitemap-area-main">
+      <div class="container">
+        <div class="sitemap-area">
+          <ul>
+            <li><a href="https://www.indyvogue.com/">Home Page</a></li>
+            <li><a href="https://www.indyvogue.com/pages/about-us">Company Profile</a></li>
+            <li><a href="https://www.indyvogue.com/collections">Our Collections</a></li>
+            <li>
+              <a href="https://www.indyvogue.com/collections/buy-silk-mark-certified-saree">Our Products</a>
+              <ul>
+                {% for c in collections %}
+                  {% if c.products_count > 0 and c.title != "Sukanya Ready" %}
+                    {% unless c.title contains "HomePage" or c.title contains "New Saree" or c.title contains "Baisakhi Collection 2019" or c.title contains "Blouse - Front" or c.title contains "Shopify Facebook Feed Saree" %}
+                      <li>
+                        <a href="{{ c.url }}">{{ c.title }}</a>
+                        <ul>
+                          {% paginate collections['buy-silk-mark-certified-saree'].products by 1000 %}
+                            {% for product in collections[c.handle].products %}
+                              <li><a href="{{ product.url }}">{{ product.title }}</a></li>
+                            {% endfor %}
+                          {% endpaginate %}
+                        </ul>
+                      </li>
+                    {% endunless %}
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </li>
+            <li><a href="https://www.indyvogue.com/pages/contact-us">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
