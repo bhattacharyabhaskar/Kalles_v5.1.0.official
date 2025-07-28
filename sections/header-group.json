@@ -119,6 +119,23 @@
     },
     "header_inline_xePFbC": {
       "type": "header-inline",
+      "blocks": {
+        "html_hXnLHw": {
+          "type": "html",
+          "settings": {
+            "title": "SAREES",
+            "html": "",
+            "page": "",
+            "mega_menu_colors": "",
+            "mega_width": "full",
+            "mega_position": "bottom",
+            "mega_custom_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "html_hXnLHw"
+      ],
       "settings": {
         "header_layout": "logo_left",
         "header_fullwidth": true,
@@ -126,7 +143,7 @@
         "logo": "shopify://shop_images/IndyVogue-Logo_9a5dfcdf-3470-4526-a8c9-2982ca256dc3.svg",
         "logo_width": 95,
         "header_colors": "",
-        "main_menu": "01-desktop-header",
+        "main_menu": "",
         "lazy_mn": false,
         "menu_position": "center",
         "menu_size": "base",
@@ -155,85 +172,11 @@
         "sticky_type": "on_scroll_up",
         "sticky_glass": false
       }
-    },
-    "header_menu_bottom_blocks_ANMJ83": {
-      "type": "header-menu-bottom-blocks",
-      "blocks": {
-        "mega_block_hUUHKX": {
-          "type": "_mega_block",
-          "name": "Mega Block",
-          "settings": {
-            "title": "SAREES",
-            "mega_menu_colors": "",
-            "mega_width": "full",
-            "mega_position": "bottom",
-            "mega_custom_width": 1200,
-            "mega_presets": "mega_shop",
-            "html": "",
-            "page": "",
-            "blog": "",
-            "product_list": [],
-            "collection_list": [
-              "buy-silk-mark-certified-saree"
-            ],
-            "limit": 8,
-            "image_ratio": "adapt_image",
-            "image_size": true,
-            "navUI": true,
-            "collection_colors": "",
-            "product_list_title": "BEST SELLER"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "mega_block_hUUHKX"
-      ],
-      "name": "t:sections.header.header_bottom.name_new",
-      "settings": {
-        "header_layout": "logo_left",
-        "header_fullwidth": false,
-        "header_border_bottom": false,
-        "logo_width": 136,
-        "header_height": 68,
-        "header_colors": "",
-        "search_type": "icon",
-        "enabled_user": true,
-        "enabled_wishlist": true,
-        "enabled_language_currency": true,
-        "other_main_header_content": "",
-        "header_bottom_height": 60,
-        "header_bottom_colors": "",
-        "main_menu": "",
-        "lazy_mn": true,
-        "menu_position": "center",
-        "menu_size": "lg",
-        "menu_weight": "medium",
-        "text_transform": false,
-        "dropdown_arrow": false,
-        "spacing_nav": 30,
-        "open_event": "hover",
-        "header_menu_colors": "",
-        "header_categories": false,
-        "title_categories": "All Categories",
-        "menu_categories": "",
-        "header_border": "none",
-        "header_height_mb": 60,
-        "logo_width_mb": 130,
-        "main_menu_mobile": "",
-        "lazy_mn_mb": true,
-        "only_click_icon": false,
-        "header_mobile_colors": "",
-        "note_mobile": "<span class=\"hdt-inline-flex hdt-text-base hdt-font-medium\" style=\"border-bottom: solid 1px rgb(var(--color-line-border));margin-bottom: 11px\">Need help ? </span><span class=\"hdt-flex hdt-flex-col hdt-text-base hdt-font-medium\" style=\"line-height: 24px;\"><span>Address: 1234 Fashion Street, Suite 567,<br> New York, NY 10001</span><span>Email: <b>info@fashionshop.com</b></span><span>Phone: <b>(212) 555-1234</b></span></span>",
-        "sticky_type": "on_scroll_up",
-        "sticky_glass": false
-      }
     }
   },
   "order": [
     "announcement_bar_QKnWCh",
     "top_bar_3qfcq8",
-    "header_inline_xePFbC",
-    "header_menu_bottom_blocks_ANMJ83"
+    "header_inline_xePFbC"
   ]
 }
