@@ -556,7 +556,7 @@
               "settings": {
                 "option_type": "liquid",
                 "page": "",
-                "text": "<span class=\"hdt-text-secondary\">All Rights Reserved © 2025 <a href=\"https://www.indyvogue.com\" class=\"hdt-text-primary\" aria-describedby=\"a11y-external-message\">IndyVogue LLC</a> - </span>",
+                "text": "<span class=\"hdt-text-secondary\">All Rights Reserved © 2025 <a href=\"https://www.indyvogue.com\" class=\"hdt-text-primary\" aria-describedby=\"a11y-external-message\">IndyVogue LLC</a> </span>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
