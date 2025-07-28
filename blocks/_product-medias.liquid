@@ -61,13 +61,21 @@
             <hdt-slider id="slider-{{ block.id }}-{{ product.id }}" aria-controls="slider-thumb-{{ block.id }}-{{ product.id }}" autoheight class="hdt-slider hdt-slider-parent hdt-relative hdt-ratio--{{ block.settings.image_ratio }}{% unless block.settings.image_size %} hdt-ratio--contain{% endunless %} {% if block.settings.navUI %} hdt-slider-has-nav{% endif %}" config='{ "autoHeight": true{{ start_index }}, "slidesToScroll": 1, "watchDrag": "onlyTypeImage", "navUI": {{ block.settings.navUI }}, "slides": ".hdt-slider__slide:not([hidden])" }'>
               <div class="hdt-slider__viewport">
                 <div class="hdt-slider__container">
+                    {% assign media_index = 0 %}
                     {%- liquid
                       for media in product.media
-                        assign lazy_load = false
+                        assign media_index = media_index | plus: 1
+                        assign is_first = false
+                        assign lazy_load = 
+
+                        if media_index == 1
+                          assign is_first = true
+                        endif
+                        
                         if media.position > 1
                           assign lazy_load = true
                         endif
-                        render 'media', media: media, selected_variant: selected_variant, un_no_pick: un_no_pick, position: media.position, group_media_obj: group_media_obj, variant_images: variant_images, class: 'hdt-slider__slide', autoplay: block.settings.enable_media_autoplay, loop: block.settings.enable_video_looping, lazy_load: lazy_load
+                        render 'media', media: media, selected_variant: selected_variant, un_no_pick: un_no_pick, position: media.position, group_media_obj: group_media_obj, variant_images: variant_images, class: 'hdt-slider__slide', autoplay: block.settings.enable_media_autoplay, loop: block.settings.enable_video_looping, lazy_load: lazy_load, is_first: is_first
                       endfor
                     -%}
                 </div>
