@@ -184,7 +184,7 @@
               "type": "heading",
               "name": "t:blocks.heading.name",
               "settings": {
-                "heading": "<p></p><p></p><p>COLOR</p>",
+                "heading": "<p></p><p></p><p>COLOR<br/><br/></p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "line_height": "",
