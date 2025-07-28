@@ -62,6 +62,7 @@
       {%- endif -%}
     {%- if item.selling_plan_allocation != null %}<p class="hdt-product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>{% endif -%}
     <div class="hdt-mini-cart__actions">
+      {% comment %}      
       <hdt-quantity-wrapp class="hdt-mini-cart__quantity" form="id:{{ form_id }}">
         <div data-quantity-wrapper class="hdt-quantity-wrapper hdt-quantity-cart-item hdt-block hdt-text-center hdt-relative hdt-align-center">
           <button class="hdt-quantity__button no-js-hidden is--minus hdt-absolute hdt-p-0 hdt-top-0 hdt-left-0 hdt-text-start" name="minus" type="button"  {%- if item.quantity == 1 -%} style="top: 5px" {%- endif -%}>
@@ -79,6 +80,7 @@
           </button>
         </div>
       </hdt-quantity-wrapp>
+      {% endcomment %}      
       <div class="hdt-flex hdt-align-center hdt-justify-start">
         <hdt-tooltip inner  placement="top" style="margin-inline-end: 10px">   
           <wrapp-remove-item-oncart class="hdt-inline-flex hdt-align-center" data-index="{{ item.index | plus: 1 }}" form="id:{{ form_id }}">
