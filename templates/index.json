@@ -387,8 +387,9 @@
           "type": "_collection_manual-item",
           "settings": {
             "collection": "accessories",
-            "title": "Women",
-            "collection_link": "",
+            "image": "shopify://shop_images/Kanjeevaram_HP_2104e354-bf6f-431b-a232-7ba4a21d153b.webp",
+            "title": "KANCHIPURAM",
+            "collection_link": "shopify://collections/kanchipuram-sarees",
             "column_width": "6",
             "row_count": 2,
             "tb_column_width": "6",
@@ -402,7 +403,8 @@
           "type": "_collection_manual-item",
           "settings": {
             "collection": "accessories",
-            "title": "Accessories",
+            "image": "shopify://shop_images/Bishnupuri.webp",
+            "title": "BISHNUPURI",
             "collection_link": "",
             "column_width": "3",
             "row_count": 1,
@@ -420,11 +422,11 @@
             "title": "Watches",
             "collection_link": "",
             "column_width": "3",
-            "row_count": 2,
+            "row_count": 1,
             "tb_column_width": "6",
             "tb_row_count": 1,
             "mb_column_width": "1",
-            "mb_row_count": 2
+            "mb_row_count": 1
           },
           "blocks": {}
         },
@@ -439,6 +441,38 @@
             "tb_column_width": "6",
             "tb_row_count": 1,
             "mb_column_width": "1",
+            "mb_row_count": 1
+          },
+          "blocks": {}
+        },
+        "collection_manual_item_tnMQgE": {
+          "type": "_collection_manual-item",
+          "name": "t:sections.collections-list.blocks.collection_item",
+          "settings": {
+            "collection": "",
+            "title": "Collection name",
+            "collection_link": "",
+            "column_width": "3",
+            "row_count": 1,
+            "tb_column_width": "6",
+            "tb_row_count": 1,
+            "mb_column_width": "1",
+            "mb_row_count": 1
+          },
+          "blocks": {}
+        },
+        "collection_manual_item_rixgxd": {
+          "type": "_collection_manual-item",
+          "name": "t:sections.collections-list.blocks.collection_item",
+          "settings": {
+            "collection": "",
+            "title": "Collection name",
+            "collection_link": "",
+            "column_width": "4",
+            "row_count": 2,
+            "tb_column_width": "6",
+            "tb_row_count": 1,
+            "mb_column_width": "2",
             "mb_row_count": 1
           },
           "blocks": {}
@@ -461,7 +495,9 @@
         "collection_manual_item_tXNANF",
         "collection_manual_item_AEWjQE",
         "collection_manual_item_YDPY8G",
-        "collection_manual_item_D67f4i"
+        "collection_manual_item_D67f4i",
+        "collection_manual_item_tnMQgE",
+        "collection_manual_item_rixgxd"
       ],
       "settings": {
         "collection_des": "1",
