@@ -129,7 +129,7 @@
         "main_menu": "01-desktop-header",
         "lazy_mn": false,
         "menu_position": "center",
-        "menu_size": "base",
+        "menu_size": "lg",
         "menu_weight": "normal",
         "text_transform": false,
         "dropdown_arrow": true,
