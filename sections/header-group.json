@@ -132,7 +132,7 @@
         "menu_size": "base",
         "menu_weight": "normal",
         "text_transform": false,
-        "dropdown_arrow": false,
+        "dropdown_arrow": true,
         "spacing_nav": 30,
         "open_event": "hover",
         "menu_type": "default",
