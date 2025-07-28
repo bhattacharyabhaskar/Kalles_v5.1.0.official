@@ -144,7 +144,7 @@
         "header_height_mb": 60,
         "logo_mobile": "shopify://shop_images/IndyVogue-Logo_9a5dfcdf-3470-4526-a8c9-2982ca256dc3.svg",
         "logo_width_mb": 95,
-        "main_menu_mobile": "",
+        "main_menu_mobile": "01-desktop-header",
         "header_categories": true,
         "menu_categories": "",
         "lazy_mn_mb": true,
