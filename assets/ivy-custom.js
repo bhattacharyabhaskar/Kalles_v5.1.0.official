@@ -92,6 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const floatingBtn = document.getElementById("floating-atc-button");
   const floatingText = floatingBtn?.querySelector('.hdt-btn-atc_text');
   console.log("🧾 ADd To Cart triggered");
+  console.log("🧾 atcForm", atcForm);
+  console.log("🧾 atcButton", atcButton);
+  console.log("🧾 atcTextSpan", atcTextSpan);
+  console.log("🧾 floatingBtnWrapper", floatingBtnWrapper);
+  console.log("🧾 floatingBtn", floatingBtn);
+  console.log("🧾 floatingText", floatingText);
 
   if (!atcForm || !atcButton || !floatingBtn) return;
 
