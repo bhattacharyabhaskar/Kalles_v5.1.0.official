@@ -262,13 +262,24 @@
               },
               "blocks": {}
             },
+            "spacer_Ri4gfQ": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 30,
+                "space_md": 20,
+                "space": 20
+              },
+              "blocks": {}
+            },
             "linklist_cCjYzb": {
               "type": "_linklist",
               "settings": {
                 "menu_inline": false,
                 "align": "left",
                 "align_mb": "left",
-                "menu": "",
+                "menu": "sarees-by-occassion",
                 "text_size": "base",
                 "font_size_text_lg": 16,
                 "font_size_text": 14,
@@ -285,6 +296,7 @@
             "linklist_Bhdkji",
             "spacer_P8T9ry",
             "heading_YhAdyM",
+            "spacer_Ri4gfQ",
             "linklist_cCjYzb"
           ]
         },
