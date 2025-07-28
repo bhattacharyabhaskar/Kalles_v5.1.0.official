@@ -33,8 +33,10 @@
 {%- comment -%} Eager load the first image only {%- endcomment -%}
 {% if is_first %}
   {% assign load_attr = 'eager' %}
+  {% assign sizes = '(min-width: 768px) 600px, 90vw' %}
 {% else %}
   {% assign load_attr = 'lazy' %}
+  {% assign sizes = '20vw' %}
 {% endif %}
 
 {%- comment -%} Silk Mark Badge {%- endcomment -%}
