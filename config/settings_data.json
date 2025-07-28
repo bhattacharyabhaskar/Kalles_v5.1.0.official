@@ -70,6 +70,7 @@
     "show_qty": false,
     "pr_card_alignment": "center",
     "show_rating": false,
+    "uppercase_title": true,
     "pr_title_weight": "medium",
     "pr_price_weight": "normal",
     "color_mode": "color",
