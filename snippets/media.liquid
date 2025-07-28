@@ -1,10 +1,10 @@
 {%- comment -%}
   Optimized product media snippet for IndyVogue.
   Enhancements:
-  - Eager load for first image
-  - Lazy load others
-  - CLS prevention via width/height
-  - Retains Silk Mark badge and variant linking
+  - First image loads eagerly
+  - Others lazy load
+  - Width/height attributes for CLS
+  - Silk Mark logo overlay retained
 {%- endcomment -%}
 
 {%- liquid
@@ -30,14 +30,14 @@
   endif
 -%}
 
-{%- comment -%} Eager load first image only {%- endcomment -%}
+{%- comment -%} Eager load the first image only {%- endcomment -%}
 {% if forloop.index == 1 %}
-  {% assign is_eager = true %}
+  {% assign load_attr = 'eager' %}
 {% else %}
-  {% assign is_eager = false %}
+  {% assign load_attr = 'lazy' %}
 {% endif %}
 
-{%- comment -%} Silk Mark Badge Overlay {%- endcomment -%}
+{%- comment -%} Silk Mark Badge {%- endcomment -%}
 {% assign fabric_value = product.metafields.saree.fabric_type | metafield_text %}
 {% if product.type == 'Saree' and fabric_value contains 'Silk Mark Certified' %}
   <div class="ivy-badge-logo-left">
@@ -49,11 +49,11 @@
   <div {{ media_hidden }}{% if variant_images contains media.src %} data-variants-id="{{ product.images | where: 'src', image.src | map: 'variants' | map: 'id' | join: ';' }}"{% endif %} class="{{ class }} hdt-product__media-item" data-media-id="{{ media.id }}" data-media-type="{{ media.media_type }}" data-group-name="{{ media_option_name }}"  data-group-value="{{ media_option_value | escape }}">
     <div class="hdt-ratio hdt-product__media" style="--aspect-ratioapt:{{ image.aspect_ratio }}; --mw-media:{{ image.width }}px">
       {{ image | image_url: width: 823 | image_tag:
-          loading: is_eager == true ? 'eager' : 'lazy',
-          widths: '493, 600, 713, 823',
-          width: image.width,
-          height: image.height,
-          sizes: sizes }}
+        loading: load_attr,
+        widths: '493, 600, 713, 823',
+        width: image.width,
+        height: image.height,
+        sizes: sizes }}
     </div>
   </div>
 
@@ -64,20 +64,20 @@
         {%- when 'video' -%}
           <hdt-video-player type="video">
             {{ image | image_url: width: 823 | image_tag:
-                loading: 'lazy',
-                widths: '493, 600, 713, 823',
-                width: image.width,
-                height: image.height }}
+              loading: 'lazy',
+              widths: '493, 600, 713, 823',
+              width: image.width,
+              height: image.height }}
             {{ media | video_tag: image_size: '400x', playsinline: true, autoplay: autoplay, muted: mute, loop: loop, controls: true, preload: 'none' }}
           </hdt-video-player>
 
         {%- when 'external_video' -%}
           <hdt-video-player type="external_video" host="{{ media.host }}">
             {{ image | image_url: width: 823 | image_tag:
-                loading: 'lazy',
-                widths: '493, 600, 713, 823',
-                width: image.width,
-                height: image.height }}
+              loading: 'lazy',
+              widths: '493, 600, 713, 823',
+              width: image.width,
+              height: image.height }}
             <template>
               {%- if media.host == 'youtube' -%}
                 {{ media | external_video_url: autoplay: autoplay, loop: loop, mute: mute, playlist: media.external_id | external_video_tag }}
