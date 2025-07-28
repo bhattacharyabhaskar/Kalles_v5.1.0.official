@@ -213,8 +213,8 @@
               "name": "t:blocks.spacer.name",
               "settings": {
                 "direction": false,
-                "space_lg": 50,
-                "space_md": 50,
+                "space_lg": 30,
+                "space_md": 30,
                 "space": 50
               },
               "blocks": {}
