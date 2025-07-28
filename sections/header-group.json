@@ -90,7 +90,7 @@
           "type": "cur",
           "settings": {
             "show_currency": true,
-            "show_language": true,
+            "show_language": false,
             "use_location": true,
             "txt_location": "Location",
             "url_location": "shopify://pages/contact",
@@ -120,6 +120,21 @@
     "header_inline_xePFbC": {
       "type": "header-inline",
       "blocks": {
+        "mega_product_wQppip": {
+          "type": "mega_product",
+          "settings": {
+            "title": "SAREES",
+            "product_list_title": "BEST SELLER",
+            "product_list": [],
+            "image_ratio": "adapt_image",
+            "image_size": true,
+            "navUI": true,
+            "mega_menu_colors": "",
+            "mega_width": "full",
+            "mega_position": "bottom",
+            "mega_custom_width": 1200
+          }
+        },
         "html_7DJYPE": {
           "type": "html",
           "settings": {
@@ -216,6 +231,7 @@
         }
       },
       "block_order": [
+        "mega_product_wQppip",
         "html_7DJYPE",
         "mega_shop_PKdDaN",
         "mega_product_ntakNQ",
