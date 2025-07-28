@@ -65,7 +65,7 @@
       {%- case media.media_type -%}
         {%- when 'video' -%}
           <hdt-video-player type="video">
-            {{ image | image_url: width: 823 | image_tag:
+            {{ image | image_url | image_tag:
               loading: 'lazy',
               widths: '300, 493, 600, 713, 823',
               width: image.width,
