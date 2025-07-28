@@ -97,8 +97,21 @@
             <hdt-slider-thumb {% if block.settings.enable_thumb_efect %} stagger {% endif %} id="slider-thumb-{{ block.id }}-{{ product.id }}" aria-controls="slider-{{ block.id }}-{{ product.id }}" autoheight class="hdt-slider hdt-ratio--{{ block.settings.image_ratio }}{% unless block.settings.image_size %} hdt-ratio--contain{% endunless %} hdt-slides-4 hdt-slide-spacing-10{% if mobile_media_layout != 'thumbnails' %} hdt-hidden lg:hdt-block{% endif %}" config='{ "active": {% if mobile_media_layout != 'thumbnails' %}false{% else %}true{% endif %}{{ start_index }}, "autoHeight": false, "classNames": false, "dragFree": false, "slidesToScroll": 1, "align": "center", "axis": "x", "slides": ".hdt-slider__slide:not([hidden])"{% if desktop_media_layout == 'thumbnail_left' or desktop_media_layout == 'thumbnail_right' %}, "breakpoints": { "(min-width: 1150px)": { "active": true, "axis": "y", "watchSlides": false } }{% endif %} }'>
               <div class="hdt-slider__viewport">
                 <div class="hdt-slider__container">
+                    {% assign media_index = 0 %}
                     {%- liquid
                       for media in product.media
+                      assign media_index = media_index | plus: 1
+                      assign lazy_load = false
+                      assign is_first = false
+
+                        if media_index == 1
+                          assign is_first = true
+                        endif
+
+                        
+                      if media.position > 1
+                        assign lazy_load = true
+                      endif
                         render 'media-thumb', media: media, selected_variant: selected_variant, un_no_pick: un_no_pick, group_media_obj: group_media_obj, variant_images: variant_images, class: 'hdt-slider__slide', autoplay: block.settings.enable_media_autoplay, loop: block.settings.enable_video_looping, lazy_load: lazy_load, is_first: is_first
                       endfor
                     -%}
