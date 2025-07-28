@@ -52,6 +52,9 @@
     -%}
 
     {{ content_for_header }}
+      {% if template == 'product' and product.media.size > 0 %}
+        <link rel="preload" as="image" href="{{ product.media.first.preview_image | image_url: width: 823 }}">
+      {% endif %}
     {%- endunless -%}
   </head>
 
