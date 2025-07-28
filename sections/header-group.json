@@ -119,23 +119,6 @@
     },
     "header_inline_xePFbC": {
       "type": "header-inline",
-      "blocks": {
-        "html_hXnLHw": {
-          "type": "html",
-          "settings": {
-            "title": "SAREES",
-            "html": "",
-            "page": "",
-            "mega_menu_colors": "",
-            "mega_width": "full",
-            "mega_position": "bottom",
-            "mega_custom_width": 1200
-          }
-        }
-      },
-      "block_order": [
-        "html_hXnLHw"
-      ],
       "settings": {
         "header_layout": "logo_left",
         "header_fullwidth": true,
@@ -143,7 +126,7 @@
         "logo": "shopify://shop_images/IndyVogue-Logo_9a5dfcdf-3470-4526-a8c9-2982ca256dc3.svg",
         "logo_width": 95,
         "header_colors": "",
-        "main_menu": "",
+        "main_menu": "01-desktop-header",
         "lazy_mn": false,
         "menu_position": "center",
         "menu_size": "base",
