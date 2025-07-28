@@ -67,7 +67,7 @@
           <hdt-video-player type="video">
             {{ image | image_url: width: 823 | image_tag:
               loading: 'lazy',
-              widths: '493, 600, 713, 823',
+              widths: '300, 493, 600, 713, 823',
               width: image.width,
               height: image.height }}
             {{ media | video_tag: image_size: '400x', playsinline: true, autoplay: autoplay, muted: mute, loop: loop, controls: true, preload: 'none' }}
@@ -77,7 +77,7 @@
           <hdt-video-player type="external_video" host="{{ media.host }}">
             {{ image | image_url: width: 823 | image_tag:
               loading: 'lazy',
-              widths: '493, 600, 713, 823',
+              widths: '300, 493, 600, 713, 823',
               width: image.width,
               height: image.height }}
             <template>
