@@ -57,7 +57,11 @@
             render 'icon' with '3d-model'
           echo '</span>'
       endcase
-      echo image | image_url: width: 300 | image_tag: class: image_class, sizes: '(min-width: 768px) 100px, 60px', widths: '100, 200, 300', loading: 'lazy'
     -%}
+    {{ image | image_url: width: 300 | image_tag:
+      widths: '100, 200, 300',
+      sizes: '(min-width: 768px) 100px, 60px',
+      loading: 'lazy',
+      class: 'hdt-object-cover' }}
   </div>
 </div>
