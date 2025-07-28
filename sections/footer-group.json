@@ -268,7 +268,7 @@
               "settings": {
                 "direction": false,
                 "space_lg": 30,
-                "space_md": 20,
+                "space_md": 30,
                 "space": 20
               },
               "blocks": {}
@@ -303,7 +303,7 @@
         "footer_column_3Dap6p": {
           "type": "_footer-column",
           "settings": {
-            "col_heading": "Information",
+            "col_heading": "PRICE",
             "hide_on_mobile": false,
             "only_mobile": true,
             "sec_heading_size": "lg",
@@ -325,7 +325,7 @@
                 "menu_inline": false,
                 "align": "left",
                 "align_mb": "left",
-                "menu": "footer",
+                "menu": "sarees-by-price",
                 "text_size": "base",
                 "font_size_text_lg": 16,
                 "font_size_text": 14,
