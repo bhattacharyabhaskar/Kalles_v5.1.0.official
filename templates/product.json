@@ -198,7 +198,7 @@
       ],
       "settings": {
         "product_list_fbt": [],
-        "sticky_atc": true,
+        "sticky_atc": false,
         "ani": "none",
         "time": 6,
         "btn_transform": "hdt-uppercase",
