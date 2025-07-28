@@ -56,6 +56,14 @@
     assign media_option_value = ''
   endif
 -%}
+{% comment %}----- Start Add Silk Mark Logo on images -----{% endcomment %}          
+{% assign fabric_value = product.metafields.saree.fabric_type | metafield_text %}
+  {% if product.type == 'Saree' and fabric_value contains 'Silk Mark Certified' %}
+    <div class="ivy-badge-logo-left">
+      <img src="https://cdn.shopify.com/s/files/1/1469/7362/files/Silk-Mark-Product.jpg?v=1753640761" alt="Silk Mark Certified" width="80" height="80">
+    </div>
+  {% endif %}
+{% comment %}----- End Add Silk Mark Logo on images -----{% endcomment %}          
 
 {%- if media.media_type == 'image' -%}
   <div {{ media_hidden }}{% if variant_images contains media.src %} data-variants-id="{{ product.images | where: 'src', image.src | map: 'variants' | map: 'id' | join: ';' }}"{% endif %} class="{{ class }} hdt-product__media-item" data-media-id="{{ media.id }}" data-media-type="{{ media.media_type }}" data-group-name="{{ media_option_name }}"  data-group-value="{{ media_option_value | escape }}">
