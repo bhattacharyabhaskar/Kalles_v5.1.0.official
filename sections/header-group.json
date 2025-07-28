@@ -125,7 +125,7 @@
         "header_height": 100,
         "logo": "shopify://shop_images/IndyVogue-Logo_9a5dfcdf-3470-4526-a8c9-2982ca256dc3.svg",
         "logo_width": 95,
-        "header_colors": "",
+        "header_colors": "scheme-1",
         "main_menu": "01-desktop-header",
         "lazy_mn": false,
         "menu_position": "center",
