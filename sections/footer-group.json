@@ -215,7 +215,7 @@
                 "direction": false,
                 "space_lg": 30,
                 "space_md": 30,
-                "space": 50
+                "space": 20
               },
               "blocks": {}
             },
@@ -231,6 +231,17 @@
                 "font_size_text_lg": 16,
                 "font_size_text": 14,
                 "letter_spacing_text": 0
+              },
+              "blocks": {}
+            },
+            "spacer_P8T9ry": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 30,
+                "space_md": 30,
+                "space": 20
               },
               "blocks": {}
             },
@@ -272,6 +283,7 @@
             "heading_aHhyBJ",
             "spacer_9aTy3m",
             "linklist_Bhdkji",
+            "spacer_P8T9ry",
             "heading_YhAdyM",
             "linklist_cCjYzb"
           ]
