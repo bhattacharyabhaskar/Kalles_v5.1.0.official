@@ -82,5 +82,9 @@
       render 'structured-data'
     -%}
    {%- endunless -%}
+   {% comment %} ----- Start Include custom js ----- {% endcomment %}
+    <script src="{{ 'ivy-custom.js' | asset_url }}" defer></script>
+  {% comment %} ----- End Include custom js ----- {% endcomment %}
+
   </body>
 </html>
