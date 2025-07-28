@@ -180,6 +180,17 @@
               },
               "blocks": {}
             },
+            "spacer_i97TUR": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 50,
+                "space_md": 50,
+                "space": 50
+              },
+              "blocks": {}
+            },
             "heading_aHhyBJ": {
               "type": "heading",
               "name": "t:blocks.heading.name",
@@ -194,6 +205,17 @@
                 "font_size_heading_lg": 50,
                 "font_size_heading": 24,
                 "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "spacer_9aTy3m": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 50,
+                "space_md": 50,
+                "space": 50
               },
               "blocks": {}
             },
@@ -229,7 +251,9 @@
           },
           "block_order": [
             "linklist_gc6gne",
+            "spacer_i97TUR",
             "heading_aHhyBJ",
+            "spacer_9aTy3m",
             "linklist_Bhdkji",
             "linklist_cCjYzb"
           ]
