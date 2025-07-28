@@ -68,7 +68,7 @@
                   <th>{{ 'sections.cart.headings.total' | t }}</th>
                 </tr>
               </thead>
-              {% comment %}{% endcomment %}
+              {% comment %} ----- Start Group items by parentid-----{% endcomment %}
               <tbody>
                   {%- assign group_map = '' -%}
                   {%- assign parent_ids = '' -%}
@@ -133,6 +133,7 @@
                     {%- endif -%}
                   {%- endfor -%}
               </tbody>
+              {% comment %} ----- End Group items by parentid-----{% endcomment %}                
               {% comment %}
               <tbody>
                 {%- for item in cart.items -%}
