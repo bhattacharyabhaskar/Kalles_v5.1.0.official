@@ -139,7 +139,7 @@
         "header_menu_colors": "",
         "search_type": "short_form",
         "enabled_user": true,
-        "enabled_wishlist": true,
+        "enabled_wishlist": false,
         "header_socials": false,
         "header_height_mb": 60,
         "logo_mobile": "shopify://shop_images/IndyVogue-Logo_9a5dfcdf-3470-4526-a8c9-2982ca256dc3.svg",
