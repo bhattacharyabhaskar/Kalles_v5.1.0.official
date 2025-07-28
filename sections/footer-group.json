@@ -146,6 +146,94 @@
             "linklist_mTLiQc"
           ]
         },
+        "footer_column_U4EkTn": {
+          "type": "_footer-column",
+          "settings": {
+            "col_heading": "EXCLUSIVES",
+            "hide_on_mobile": false,
+            "only_mobile": true,
+            "sec_heading_size": "lg",
+            "space": 30,
+            "colors_by_section": false,
+            "color_scheme": "scheme-c9476b69-abc7-454f-a946-2d5a9f5f3a37",
+            "background_opacity": 0,
+            "width_lg": 16,
+            "width_md": 50,
+            "width": 100,
+            "padding_t": 6,
+            "padding_b": 0,
+            "padding_rate": 50
+          },
+          "blocks": {
+            "linklist_gc6gne": {
+              "type": "_linklist",
+              "name": "t:blocks.link_list.name",
+              "settings": {
+                "menu_inline": false,
+                "align": "left",
+                "align_mb": "left",
+                "menu": "sarees-by-color",
+                "text_size": "base",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            },
+            "heading_aHhyBJ": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<p></p><p></p><p>COLOR</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h4",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "linklist_Bhdkji": {
+              "type": "_linklist",
+              "name": "t:blocks.link_list.name",
+              "settings": {
+                "menu_inline": false,
+                "align": "left",
+                "align_mb": "left",
+                "menu": "sarees-by-color",
+                "text_size": "base",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            },
+            "linklist_cCjYzb": {
+              "type": "_linklist",
+              "settings": {
+                "menu_inline": false,
+                "align": "left",
+                "align_mb": "left",
+                "menu": "",
+                "text_size": "base",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "linklist_gc6gne",
+            "heading_aHhyBJ",
+            "linklist_Bhdkji",
+            "linklist_cCjYzb"
+          ]
+        },
         "footer_column_3Dap6p": {
           "type": "_footer-column",
           "settings": {
@@ -182,44 +270,6 @@
           },
           "block_order": [
             "linklist_BDr677"
-          ]
-        },
-        "footer_column_U4EkTn": {
-          "type": "_footer-column",
-          "settings": {
-            "col_heading": "Useful links",
-            "hide_on_mobile": false,
-            "only_mobile": true,
-            "sec_heading_size": "lg",
-            "space": 30,
-            "colors_by_section": false,
-            "color_scheme": "scheme-c9476b69-abc7-454f-a946-2d5a9f5f3a37",
-            "background_opacity": 0,
-            "width_lg": 16,
-            "width_md": 50,
-            "width": 100,
-            "padding_t": 6,
-            "padding_b": 0,
-            "padding_rate": 50
-          },
-          "blocks": {
-            "linklist_cCjYzb": {
-              "type": "_linklist",
-              "settings": {
-                "menu_inline": false,
-                "align": "left",
-                "align_mb": "left",
-                "menu": "",
-                "text_size": "base",
-                "font_size_text_lg": 16,
-                "font_size_text": 14,
-                "letter_spacing_text": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "linklist_cCjYzb"
           ]
         },
         "footer_column_dYTFqa": {
@@ -321,8 +371,8 @@
       "block_order": [
         "footer_column_pA3QPh",
         "footer_column_C3zLBR",
-        "footer_column_3Dap6p",
         "footer_column_U4EkTn",
+        "footer_column_3Dap6p",
         "footer_column_dYTFqa"
       ],
       "settings": {
