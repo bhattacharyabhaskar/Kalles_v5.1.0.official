@@ -122,7 +122,7 @@
       "settings": {
         "header_layout": "logo_left",
         "header_fullwidth": true,
-        "header_height": 70,
+        "header_height": 100,
         "logo": "shopify://shop_images/IndyVogue-Logo_9a5dfcdf-3470-4526-a8c9-2982ca256dc3.svg",
         "logo_width": 95,
         "header_colors": "",
