@@ -556,7 +556,7 @@
               "settings": {
                 "option_type": "liquid",
                 "page": "",
-                "text": "<span class=\"hdt-text-secondary\">All Rights Reserved © 2025 <a href=\"https://1.envato.market/Eamba9\" class=\"hdt-text-primary\" aria-describedby=\"a11y-external-message\">Kalles</a> - Developed by <a class=\"t4s-secondary\" href=\"https://the4.co/?utm_source=Kalles-Demo&amp;utm_medium=Copyright\" aria-describedby=\"a11y-external-message\" style=\"color: rgb(var(--color-foreground))\"> The4 </a></span>",
+                "text": "<span class=\"hdt-text-secondary\">All Rights Reserved © 2025 <a href=\"https://www.indyvogue.com\" class=\"hdt-text-primary\" aria-describedby=\"a11y-external-message\">IndyVogue LLC</a> - </span>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -592,25 +592,7 @@
             "padding_b": 0,
             "padding_rate": 50
           },
-          "blocks": {
-            "linklist_ayUigQ": {
-              "type": "_linklist",
-              "settings": {
-                "menu_inline": true,
-                "align": "right",
-                "align_mb": "center",
-                "menu": "",
-                "text_size": "base",
-                "font_size_text_lg": 16,
-                "font_size_text": 14,
-                "letter_spacing_text": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "linklist_ayUigQ"
-          ]
+          "blocks": {}
         }
       },
       "block_order": [
