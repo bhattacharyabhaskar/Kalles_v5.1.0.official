@@ -19,16 +19,17 @@
 
 <html class="no-js hdt-pr-img__effect-{{ settings.effect_secondary_image }} hdt-badge__shape-{{ settings.badge_shape }} dir--{{ dir }}{% if request.design_mode %} shopify-design-mode{% endif %} {% if settings.minimal_products %} hdt-minimal-products{% endif %}{% if settings.hidden_badges %} hdt-hidden-pr-badges{% endif %}{% if settings.hidden_quickview %} hdt-hidden-pr-quickview{% endif %}{% if settings.hidden_wishlist %} hdt-hidden-pr-wishlist{% endif %}{% if settings.hidden_compare %} hdt-hidden-pr-compare{% endif %}{% if settings.uppercase_title %} hdt-pr-uppercase_title{% endif %}" lang="{{ request.locale.iso_code }}" dir="{{ dir }}">
   <head>
-		{% if template contains 'index' %}
-			{% render 'organization-schema' %}
-		{% elsif template contains 'collection' %}
-			{% render 'breadcrumb-schema-collection' %}
-		{% elsif template contains 'product' %}
-			{% render 'breadcrumb-schema-product' %}
-		{% elsif template contains 'article' %}
-			{% render 'article-schema' %}
-		{% else %}
-		{% endif %}
+    {% render 'website-schema' %}
+    {% if template contains 'index' %}
+        {% render 'organization-schema' %}
+    {% elsif template contains 'collection' %}
+        {% render 'breadcrumb-schema-collection' %}
+    {% elsif template contains 'product' %}
+        {% render 'breadcrumb-schema-product' %}
+    {% elsif template contains 'article' %}
+        {% render 'article-schema' %}
+    {% else %}
+    {% endif %}
     {%- unless template == 'product.only_config' and request.design_mode == false -%}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
