@@ -52,6 +52,7 @@
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
 
     {%- if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+    {% render 'page-title-meta-desc' %}
     {%- liquid
       render 'social-meta-tags'
       render 'css-variables', is_rtl: is_rtl
@@ -93,6 +94,7 @@
       render 'structured-data'
     -%}
    {%- endunless -%}
+   
    {% comment %} ----- Start Include custom js ----- {% endcomment %}
     <script src="{{ 'ivy-custom.js' | asset_url }}" defer></script>
   {% comment %} ----- End Include custom js ----- {% endcomment %}
