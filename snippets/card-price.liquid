@@ -133,7 +133,7 @@
         {%- if price_varies_item != '' %}
           {{ money_price }}
         {%- else -%}
-          <span class="hdt-money">{{ money_price }}</span>
+          <span class="hdt-money">{{ final_price | money }}</span>
         {%- endif -%}
       </hdt-price>
     {%- endif -%}
