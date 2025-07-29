@@ -48,10 +48,7 @@
     assign money_price_max = price_max | money
   endif
 
-  assign on_sale = false
-  if compare_at_price > price
-    assign on_sale = true
-  endif
+ 
 
   assign price_varies_item = ''
   if target == product and product.price_varies
@@ -125,7 +122,7 @@
         {{- 'products.product.volume_pricing.price_range_html' | t: minimum: money_price_min, maximum: money_price_max -}}
       </span>
     {%- else -%}
-      {%- if compare_at_price and on_sale and show_compare_at_price -%}
+      {%- if compare_at_price and is_sale and show_compare_at_price -%}
         <!-- DEBUG: Showing compare_at_price as strike-through -->
         <hdt-compare-at-price class="hdt-compare-at-price{% if product.price_varies and settings.price_varies_style == "1" %} hdt-hidden{% endif %}">
           <span class="sr-only sr-only--inline">{{ 'products.product.price.regular_price' | t }}</span>
