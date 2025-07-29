@@ -11,9 +11,12 @@
 {%- endcomment -%}
 
 {%- liquid
-  assign show_compare_at_price = show_compare_at_price | default: true
+  if show_compare_at_price == nil
+    assign show_compare_at_price = true
+  endif
+
   assign selected_or_first_available_variant = product.selected_or_first_available_variant
-  assign target = use_variant | default: false | iftrue: selected_or_first_available_variant, product
+  assign target = use_variant and selected_or_first_available_variant or product
 
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
@@ -21,21 +24,12 @@
   assign price_max = product.price_max
   assign available = target.available | default: false
 
-  if settings.currency_code_enabled
-    assign money_price = price | money_with_currency
-    assign money_compare_at_price = compare_at_price | money_with_currency
-    assign money_price_min = price_min | money_with_currency
-    assign money_price_max = price_max | money_with_currency
-  else
-    assign money_price = price | money
-    assign money_compare_at_price = compare_at_price | money
-    assign money_price_min = price_min | money
-    assign money_price_max = price_max | money
-  endif
+  assign money_price = settings.currency_code_enabled and (price | money_with_currency) or (price | money)
+  assign money_compare_at_price = settings.currency_code_enabled and (compare_at_price | money_with_currency) or (compare_at_price | money)
+  assign money_price_min = settings.currency_code_enabled and (price_min | money_with_currency) or (price_min | money)
+  assign money_price_max = settings.currency_code_enabled and (price_max | money_with_currency) or (price_max | money)
 
-  assign on_sale = compare_at_price > price
   assign price_varies_item = ''
-
   if target == product and product.price_varies
     assign price_varies_item = ' hdt-price-item--range'
     if settings.price_varies_style == "1"
@@ -61,9 +55,15 @@
   {% render 'discount-calculation', price_cents: price, is_sale_collection: is_sale_collection, is_suite_collection: is_suite_collection %}
 {%- endcapture -%}
 
-{%- assign global_final_price_cents = global_final_price_cents_raw | split: '<!-- FINAL PRICE START -->' | last | split: '<!-- FINAL PRICE END -->' | first | strip -%}
-{%- assign final_price = global_final_price_cents | plus: 0 -%}
-{%- assign on_sale = compare_at_price > final_price -%}
+{%- assign global_final_price_cents = global_final_price_cents_raw | split: '<!-- FINAL PRICE START -->' | last | split: '<!-- FINAL PRICE END -->' | first | strip | plus: 0 -%}
+{%- assign final_price = global_final_price_cents -%}
+
+{%- assign is_sale = false -%}
+{% if compare_at_price > final_price %}
+  {% assign is_sale = true %}
+{% endif %}
+
+{%- assign money_final_price = settings.currency_code_enabled and (final_price | money_with_currency) or (final_price | money) -%}
 
 <div class="hdt-price-wrapp {{ price_class }}{% if show_badges %} hdt-price--show-badge{% endif %} hdt-font-{{ settings.pr_price_weight }}">
   <div class="hdt-price__list">
@@ -71,40 +71,35 @@
     {%- if product.quantity_price_breaks_configured? -%}
       {%- if show_compare_at_price and compare_at_price -%}
         <hdt-compare-at-price class="hdt-compare-at-price">
-          <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
+          <span class="sr-only sr-only--inline">{{ 'products.product.price.regular_price' | t }}</span>
           <span class="hdt-money">{{ money_compare_at_price }}</span>
         </hdt-compare-at-price>
       {%- endif -%}
       <span class="hdt-price hdt-price-item--range">
-        <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
+        <span class="sr-only sr-only--inline">{{ 'products.product.price.regular_price' | t }}</span>
         {{ 'products.product.volume_pricing.price_range_html' | t: minimum: money_price_min, maximum: money_price_max }}
       </span>
-    
+
     {%- else -%}
-      {%- if compare_at_price and on_sale and show_compare_at_price -%}
-        <hdt-compare-at-price class="hdt-compare-at-price{% if product.price_varies and settings.price_varies_style == '1' %} hdt-hidden{% endif %}">
-          <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
+      {%- if compare_at_price and is_sale and show_compare_at_price -%}
+        <hdt-compare-at-price class="hdt-compare-at-price{% if product.price_varies and settings.price_varies_style == "1" %} hdt-hidden{% endif %}">
+          <span class="sr-only sr-only--inline">{{ 'products.product.price.regular_price' | t }}</span>
           <span class="hdt-money">{{ money_compare_at_price }}</span>
         </hdt-compare-at-price>
       {%- endif -%}
-
       <hdt-price class="hdt-price{{ price_varies_item }}">
-        <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
-        {% if price_varies_item != '' %}
-          {{ money_price }}
-        {% else %}
-          <span class="hdt-money">{{ money_price }}</span>
-        {% endif %}
+        <span class="sr-only sr-only--inline">{{ 'products.product.price.sale_price' | t }}</span>
+        <span class="hdt-money">{{ money_final_price }}</span>
       </hdt-price>
     {%- endif -%}
 
     {%- if selected_or_first_available_variant.unit_price_measurement -%}
       <hdt-unit-price class="hdt-unit-price">
         <span class="sr-only">{{ 'products.product.price.unit_price' | t }}</span>
-        <span class="hdt-price-item hdt-price-item--last">
+        <span class="hdt-hdt-price-item hdt-price-item--last">
           <span class="hdt-money">{{ selected_or_first_available_variant.unit_price | money }}</span>
           <span aria-hidden="true">/</span>
-          <span class="sr-only">{{ 'accessibility.unit_price_separator' | t }}</span>
+          <span class="sr-only">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
           <span>
             {%- if selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
               {{ selected_or_first_available_variant.unit_price_measurement.reference_value }}
@@ -114,7 +109,6 @@
         </span>
       </hdt-unit-price>
     {%- endif -%}
-
   </div>
 
   {%- if show_badges %}{% render 'badges', product: product, use_variant: use_variant %}{% endif -%}
