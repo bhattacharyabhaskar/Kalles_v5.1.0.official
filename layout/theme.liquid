@@ -91,9 +91,21 @@
         render 'compare-offcanvas'
       endif
       render 'system-bottom'
-      render 'structured-data'
     -%}
    {%- endunless -%}
+   
+    {% render 'website-schema' %}
+    {% if template contains 'index' %}
+        {% render 'organization-schema' %}
+    {% elsif template contains 'collection' %}
+        {% render 'breadcrumb-schema-collection' %}
+    {% elsif template contains 'product' %}
+        {% render 'breadcrumb-schema-product' %}
+    {% elsif template contains 'article' %}
+        {% render 'article-schema' %}
+    {% else %}
+    {% endif %}
+    
    {% comment %} ----- Start Include custom js ----- {% endcomment %}
     <script src="{{ 'ivy-custom.js' | asset_url }}" defer></script>
   {% comment %} ----- End Include custom js ----- {% endcomment %}
