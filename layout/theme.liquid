@@ -52,7 +52,6 @@
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
 
     {%- if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
-    {% render 'page-title-meta-desc' %}
     {%- liquid
       render 'social-meta-tags'
       render 'css-variables', is_rtl: is_rtl
