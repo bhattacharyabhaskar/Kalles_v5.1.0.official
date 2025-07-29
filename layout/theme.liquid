@@ -47,7 +47,7 @@
     {%- endunless %}
     {%- if settings.library_font == 'google' -%}{{ settings.embed_google_font }}{%- endif -%}
     <title>
-      {{ page_title }}
+      {% render 'page-title-meta-desc' %}
       {%- if current_tags %} &ndash; {{ 'general.meta.tag' | t }} "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t }} {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
