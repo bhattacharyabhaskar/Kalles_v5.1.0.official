@@ -11,64 +11,9 @@
   "sections": {
     "main_heading_kcBi3p": {
       "type": "main-heading",
-      "blocks": {
-        "heading_liquid_ECwe6i": {
-          "type": "_heading_liquid",
-          "settings": {
-            "text": "{{ article.title }}",
-            "line_height": "",
-            "font_family": "hdt-font-1",
-            "text_size": "2xl",
-            "text_color": "hdt-s-text",
-            "italic": false,
-            "uppercase": true,
-            "font_size_text_lg": 16,
-            "font_size_text": 14,
-            "letter_spacing_text": 0
-          },
-          "blocks": {}
-        },
-        "heading_liquid_nC6CcJ": {
-          "type": "_heading_liquid",
-          "settings": {
-            "text": "{{ article.published_at | date: format: 'date' }}",
-            "line_height": "",
-            "font_family": "hdt-font-3",
-            "text_size": "base",
-            "text_color": "hdt-s-text",
-            "italic": true,
-            "uppercase": false,
-            "font_size_text_lg": 16,
-            "font_size_text": 14,
-            "letter_spacing_text": 0
-          },
-          "blocks": {}
-        },
-        "heading_liquid_ebQfVH": {
-          "type": "_heading_liquid",
-          "disabled": true,
-          "settings": {
-            "text": "<span>{{ 'blogs.article.in' | t }} <a href=\"{{ blog.url }}\">{{ blog.title }}</a> </span> <span class=\"hdt-comment-number hdt-relative\"><a href=\"{{ article.url }}#comment_form\">{{ 'blogs.comments.with_count' | t: count: article.comments_count }}</a></span>",
-            "line_height": "",
-            "font_family": "hdt-font-1",
-            "text_size": "base",
-            "text_color": "hdt-s-text",
-            "italic": true,
-            "uppercase": false,
-            "font_size_text_lg": 16,
-            "font_size_text": 14,
-            "letter_spacing_text": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_liquid_ECwe6i",
-        "heading_liquid_nC6CcJ",
-        "heading_liquid_ebQfVH"
-      ],
       "settings": {
         "use_dynamic_source": true,
+        "image": "shopify://shop_images/draping-blog-1.jpg",
         "color_scheme": "scheme-77e4ef58-56a9-4631-876a-12098ba7d57d",
         "bg_overlay": 54,
         "space_item": 5,
@@ -262,7 +207,7 @@
               "type": "_blog-cate",
               "settings": {
                 "widget_heading": "Blog categories",
-                "cat_link_list": "menu-blogs",
+                "cat_link_list": "",
                 "count": false
               },
               "blocks": {}
@@ -283,11 +228,8 @@
               "type": "_blog-gallery",
               "settings": {
                 "widget_heading": "Gallery",
-                "img1": "shopify://shop_images/363457-65-2_cddb07af-81ca-4273-aa07-0b7486e220cc.jpg",
                 "link1": "",
-                "img2": "shopify://shop_images/351394-32-2_206521e9-a31a-438d-9fb3-41167560a026.jpg",
                 "link2": "",
-                "img3": "shopify://shop_images/362700-63-2_6ae5e8a9-c9b0-485e-9f51-756eb787df62.jpg",
                 "link3": "",
                 "link4": "",
                 "link5": "",
