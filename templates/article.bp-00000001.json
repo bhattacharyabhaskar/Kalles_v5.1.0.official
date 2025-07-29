@@ -25,7 +25,8 @@
             "font_size_text_lg": 16,
             "font_size_text": 14,
             "letter_spacing_text": 0
-          }
+          },
+          "blocks": {}
         },
         "heading_liquid_date": {
           "type": "_heading_liquid",
@@ -40,7 +41,8 @@
             "font_size_text_lg": 16,
             "font_size_text": 14,
             "letter_spacing_text": 0
-          }
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -62,7 +64,8 @@
       "blocks": {
         "article_content_block": {
           "type": "_article-content",
-          "settings": {}
+          "settings": {},
+          "blocks": {}
         },
         "article_tag_shares": {
           "type": "_article-shares",
@@ -79,11 +82,32 @@
             "socials_size": "medium",
             "bd_radius": 30,
             "space_item": 30
-          }
+          },
+          "blocks": {}
+        },
+        "liquid_zwMJVV": {
+          "type": "_liquid",
+          "name": "t:blocks.liquid.name",
+          "settings": {
+            "option_type": "liquid",
+            "page": "",
+            "text": "<hdt-font-1>Share information about your brand with your customers.</hdt-font-1> <hdt-font-2>Describe a product, make announcements, or welcome customers to your store.</hdt-font-2>",
+            "hidden_br_mobile": false,
+            "hidden_on_mobile": false,
+            "ffamily": "",
+            "text_size": "base",
+            "font_weight": "normal",
+            "text_color": "hdt-s-text",
+            "font_size_text_lg": 16,
+            "font_size_text": 14,
+            "letter_spacing_text": 0
+          },
+          "blocks": {}
         },
         "article_navigation_block": {
           "type": "_article-navigation",
-          "settings": {}
+          "settings": {},
+          "blocks": {}
         },
         "article_related_block": {
           "type": "_article-related",
@@ -117,18 +141,41 @@
             "content_align": "start",
             "image_ratio": "-adapt_image",
             "image_size": true
-          }
+          },
+          "blocks": {
+            "article-related-heading": {
+              "type": "section-heading",
+              "static": true,
+              "settings": {
+                "design_heading": "1",
+                "horizontal": false,
+                "alignment": "left",
+                "heading_gap": 15,
+                "margin_bottom": 30
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
         },
         "article_comment_block": {
           "type": "_article-comment",
           "settings": {
             "dis_pagination": 30
-          }
+          },
+          "blocks": {}
+        },
+        "sidebar_article": {
+          "type": "_sidebar_blog",
+          "static": true,
+          "settings": {},
+          "blocks": {}
         }
       },
       "block_order": [
         "article_content_block",
         "article_tag_shares",
+        "liquid_zwMJVV",
         "article_navigation_block",
         "article_related_block",
         "article_comment_block"
