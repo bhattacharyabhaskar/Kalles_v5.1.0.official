@@ -35,6 +35,7 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless %}
     {%- if settings.library_font == 'google' -%}{{ settings.embed_google_font }}{%- endif -%}
+    {% comment %}  
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; {{ 'general.meta.tag' | t }} "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -43,7 +44,8 @@
     </title>
 
     {%- if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
-
+    {% endcomment %}
+    {% render 'page-title-meta-desc' %}
     {%- liquid
       render 'social-meta-tags'
       render 'css-variables', is_rtl: is_rtl
