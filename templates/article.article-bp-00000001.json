@@ -12,7 +12,7 @@
     "main_heading_kcBi3p": {
       "type": "main-heading",
       "settings": {
-        "use_dynamic_source": true,
+        "use_dynamic_source": false,
         "image": "shopify://shop_images/draping-blog-1.jpg",
         "color_scheme": "scheme-77e4ef58-56a9-4631-876a-12098ba7d57d",
         "bg_overlay": 54,
