@@ -199,8 +199,7 @@
                 </div>
               {%- else -%}
                 <hdt-reval-items reveal-on-scroll="true" id="{{ products_id }}" scroll-into-view class="hdt-collection-products hdt-collection-has-pr{{ section.settings.product_des }} hdt-pr-border_{{ section.settings.pr_border }} hdt-row-grid hdt-grid-cols-{{ col_mobile }} md:hdt-grid-cols-{{ col_tablet }} lg:hdt-grid-cols-{{ col_desktop }} hdt-ratio--{{ section.settings.image_ratio }}{% unless section.settings.image_size %} hdt-ratio--contain{% endunless %}">
-                {{ section.settings.product_des }}  
-                {%- liquid
+                  {%- liquid
                     capture btn_wishlist_code
                       if settings.wishlist_mode != '0'
                         render 'btn-wishlist', class: 'hdt-card-product__btn-wishlist hdt-pr_btn', placement: 'right'
