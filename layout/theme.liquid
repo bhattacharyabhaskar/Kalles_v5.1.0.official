@@ -46,10 +46,12 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless %}
     {%- if settings.library_font == 'google' -%}{{ settings.embed_google_font }}{%- endif -%}
-      {% render 'page-title-meta-desc' %}
+    <title>
+      {{ page_title }}
       {%- if current_tags %} &ndash; {{ 'general.meta.tag' | t }} "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t }} {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
 
     {%- if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
     {% render 'page-title-meta-desc' %}
@@ -94,7 +96,6 @@
       render 'structured-data'
     -%}
    {%- endunless -%}
-   
    {% comment %} ----- Start Include custom js ----- {% endcomment %}
     <script src="{{ 'ivy-custom.js' | asset_url }}" defer></script>
   {% comment %} ----- End Include custom js ----- {% endcomment %}
