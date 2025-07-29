@@ -21,15 +21,8 @@
   endif
 
   assign selected_or_first_available_variant = product.selected_or_first_available_variant
-  assign selected_or_first_available_variant = product.selected_or_first_available_variant
--%}
+  assign target = use_variant and selected_or_first_available_variant or product
 
-{% if use_variant %}
-  {% assign target = selected_or_first_available_variant %}
-{% else %}
-  {% assign target = product %}
-{% endif %}
-{%- liquid
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
   assign price_min = product.price_min
@@ -48,11 +41,6 @@
     assign money_price_max = price_max | money
   endif
 
-  assign on_sale = false
-  if compare_at_price > price
-    assign on_sale = true
-  endif
-
   assign price_varies_item = ''
   if target == product and product.price_varies
     assign price_varies_item = ' hdt-price-item--range'
@@ -62,54 +50,50 @@
       assign money_price = 'products.product.price.from_price_html' | t: price: money_price_min
     endif
   endif
+
+  assign is_sale_collection = false
+  assign is_suite_collection = false
+  for collection in product.collections
+    if collection.handle == "sale"
+      assign is_sale_collection = true
+    endif
+    if collection.handle == "suits-dresses"
+      assign is_suite_collection = true
+    endif
+  endfor
 -%}
+
+{%- assign final_price = price -%}
+
+{%- capture global_final_price_cents_raw -%}
+  {% render 'discount-calculation', price_cents: price, is_sale_collection: is_sale_collection, is_suite_collection: is_suite_collection %}
+{%- endcapture -%}
+
+{%- assign global_final_price_cents = global_final_price_cents_raw | split: '<!-- FINAL PRICE START -->' | last | split: '<!-- FINAL PRICE END -->' | first | strip | plus: 0 -%}
+{%- assign final_price = global_final_price_cents -%}
+
+{%- assign on_sale = false -%}
+{%- if compare_at_price > final_price -%}
+  {%- assign on_sale = true -%}
+{%- endif -%}
 
 <!-- DEBUG -->
 <!-- compare_at_price = {{ compare_at_price }} -->
 <!-- price = {{ price }} -->
 <!-- final_price = {{ final_price }} -->
-<!-- global_final_price_cents = {{ global_final_price_cents }} -->
 <!-- money_compare_at_price = {{ money_compare_at_price }} -->
 <!-- money_price = {{ money_price }} -->
 <!-- on_sale = {{ on_sale }} -->
 <!-- show_compare_at_price = {{ show_compare_at_price }} -->
-
-{%- assign is_sale_collection = false -%}
-{%- assign is_suite_collection = false -%}
-{% for collection in product.collections %}
-  {% if collection.handle == "sale" %}
-    {% assign is_sale_collection = true %}
-  {% endif %}
-  {% if collection.handle == "suits-dresses" %}
-    {% assign is_suite_collection = true %}
-  {% endif %}
-{% endfor %}
-
-{%- if compare_at_price >= price -%}
-  {%- assign is_sale = true -%}
-{%- endif -%}
-
-{%- assign final_price = price -%}
-{%- capture global_final_price_cents_raw -%}
-  {% render 'discount-calculation', price_cents: price, is_sale_collection: is_sale_collection, is_suite_collection: is_suite_collection %}
-{%- endcapture -%}
-{%- assign global_final_price_cents = global_final_price_cents_raw | split: '<!-- FINAL PRICE START -->' | last | split: '<!-- FINAL PRICE END -->' | first | strip -%}
-{%- assign final_price = global_final_price_cents -%}
-{%- if compare_at_price == final_price -%}
-  {%- assign is_sale = false -%}
-{%- endif -%}
-
-<!-- DEBUG: After discount -->
-<!-- compare_at_price = {{ compare_at_price }} -->
-<!-- final_price (from discount snippet) = {{ final_price }} -->
-<!-- is_sale = {{ is_sale }} -->
+<!-- product.price_varies = {{ product.price_varies }} -->
+<!-- price_varies_item = {{ price_varies_item }} -->
+<!-- DEBUG END -->
 
 <div class="hdt-price-wrapp {{ price_class }}{% if show_badges %} hdt-price--show-badge{% endif %} hdt-font-{{ settings.pr_price_weight }}">
   <div class="hdt-price__list">
     {%- if product.quantity_price_breaks_configured? -%}
       {%- if show_compare_at_price and compare_at_price -%}
         {%- unless product.price_varies == false and product.compare_at_price_varies -%}
-          <!-- DEBUG: Showing compare_at_price for volume pricing -->
           <hdt-compare-at-price class="hdt-compare-at-price">
             <span class="sr-only sr-only--inline">{{ 'products.product.price.regular_price' | t }}</span>
             <span class="hdt-money">{{ money_compare_at_price }}</span>
@@ -122,7 +106,6 @@
       </span>
     {%- else -%}
       {%- if compare_at_price and on_sale and show_compare_at_price -%}
-        <!-- DEBUG: Showing compare_at_price as strike-through -->
         <hdt-compare-at-price class="hdt-compare-at-price{% if product.price_varies and settings.price_varies_style == "1" %} hdt-hidden{% endif %}">
           <span class="sr-only sr-only--inline">{{ 'products.product.price.regular_price' | t }}</span>
           <span class="hdt-money">{{ money_compare_at_price }}</span>
@@ -133,7 +116,7 @@
         {%- if price_varies_item != '' %}
           {{ money_price }}
         {%- else -%}
-          <span class="hdt-money">{{ money_price }}</span>
+          <span class="hdt-money">{{ final_price | money }}</span>
         {%- endif -%}
       </hdt-price>
     {%- endif -%}
@@ -142,12 +125,12 @@
     <hdt-unit-price class="hdt-unit-price">
       <span class="sr-only">{{ 'products.product.price.unit_price' | t }}</span>
       <span class="hdt-hdt-price-item hdt-price-item--last">
-        <span class="hdt-money">{{- selected_or_first_available_variant.unit_price | money -}}</span>
+        <span class="hdt-money">{{ selected_or_first_available_variant.unit_price | money }}</span>
         <span aria-hidden="true">/</span>
         <span class="sr-only">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
         <span>
           {%- if selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
-            {{- selected_or_first_available_variant.unit_price_measurement.reference_value -}}
+            {{ selected_or_first_available_variant.unit_price_measurement.reference_value }}
           {%- endif -%}
           {{ selected_or_first_available_variant.unit_price_measurement.reference_unit }}
         </span>
