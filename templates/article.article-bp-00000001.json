@@ -57,300 +57,302 @@
         "padding_rate": 75
       }
     },
-    "main-article": {
-      "type": "main-article",
+    "image_text_4iTC7j": {
+      "type": "image_text",
       "blocks": {
-        "article_image_D6Kd67": {
-          "type": "_article-image",
+        "image_text_column_edRjz3": {
+          "type": "_image-text-column",
+          "name": "Media",
           "settings": {
-            "cate_des": "none"
+            "image_position": ""
           },
           "blocks": {}
         },
-        "spacer_W7KYzg": {
-          "type": "spacer",
+        "image_text_col_KKYKi7": {
+          "type": "_image-text-col",
           "settings": {
-            "direction": false,
-            "space_lg": 10,
-            "space_md": 10,
-            "space": 10
-          },
-          "blocks": {}
-        },
-        "article_title_aq9TAP": {
-          "type": "_article-title",
-          "disabled": true,
-          "settings": {
-            "show_title_first": true,
-            "show_au": true,
-            "show_dt": true,
-            "show_cm": true
-          },
-          "blocks": {}
-        },
-        "article_content_trtgKY": {
-          "type": "_article-content",
-          "settings": {},
-          "blocks": {}
-        },
-        "article_tags_3DXcjf": {
-          "type": "_article-tags",
-          "settings": {},
-          "blocks": {}
-        },
-        "spacer_BnKFGV": {
-          "type": "spacer",
-          "disabled": true,
-          "settings": {
-            "direction": false,
-            "space_lg": 10,
-            "space_md": 10,
-            "space": 10
-          },
-          "blocks": {}
-        },
-        "article_infos_KeeJ6f": {
-          "type": "_article-infos",
-          "disabled": true,
-          "settings": {
-            "show_cate": true,
-            "show_author": true,
-            "show_tags": true
-          },
-          "blocks": {}
-        },
-        "spacer_MwpTJJ": {
-          "type": "spacer",
-          "settings": {
-            "direction": false,
-            "space_lg": 10,
-            "space_md": 10,
-            "space": 10
-          },
-          "blocks": {}
-        },
-        "article_tag_shares_8cYm78": {
-          "type": "_article-shares",
-          "settings": {
-            "enable_social_facebook": true,
-            "enable_social_x": true,
-            "enable_social_pinterest": true,
-            "enable_social_tumblr": true,
-            "enable_social_telegram": true,
-            "enable_social_whatsapp": true,
-            "enable_social_email": true,
-            "socials_style": "default",
-            "show_share_button": false,
-            "socials_size": "medium",
-            "bd_radius": 30,
-            "space_item": 30
-          },
-          "blocks": {}
-        },
-        "spacer_ixizBw": {
-          "type": "spacer",
-          "settings": {
-            "direction": false,
-            "space_lg": 10,
-            "space_md": 10,
-            "space": 10
-          },
-          "blocks": {}
-        },
-        "article_navigation_qz8RYg": {
-          "type": "_article-navigation",
-          "settings": {},
-          "blocks": {}
-        },
-        "article_related_8EHqHw": {
-          "type": "_article-related",
-          "settings": {
-            "article_style": "1",
-            "uppercase": false,
-            "cate_des": "none",
-            "show_date": false,
-            "show_auth": false,
-            "date_post_related": "date",
-            "limit": 8,
-            "col_dk": "3",
-            "col_tb": "1",
-            "col_mb": "2",
-            "autoplay": 0,
-            "pauseOnHover": false,
-            "navUI": false,
-            "nav_position": "default",
-            "nav_visible": "always",
-            "nav_style": "default",
-            "nav_shape": "default",
-            "nav_size": "small",
-            "nav_hide_mobile": false,
-            "dotUI": false,
-            "pag_style": "default",
-            "pag_rounded": false,
-            "pag_space": 10,
-            "pag_mgt": 10,
-            "only_show_mobile": false,
-            "pag_hide_mobile": false,
-            "content_align": "start",
-            "image_ratio": "-adapt_image",
-            "image_size": true
+            "alignment": "center",
+            "alignment_mb": "center",
+            "colors_by_block": false,
+            "color_scheme": "",
+            "align_center": true,
+            "padding_h": 0,
+            "padding_v": 0,
+            "padding_h_mb": 15,
+            "padding_v_mb": 15
           },
           "blocks": {
-            "article-related-heading": {
-              "type": "section-heading",
-              "static": true,
+            "heading_LtbwQe": {
+              "type": "heading",
               "settings": {
-                "design_heading": "1",
-                "horizontal": false,
-                "alignment": "center",
-                "heading_gap": 18,
-                "margin_bottom": 30
-              },
-              "blocks": {
-                "heading_section_7TkEyV": {
-                  "type": "_heading_section",
-                  "name": "t:blocks.section_heading.name",
-                  "settings": {
-                    "heading": "RELATED ARTICLES",
-                    "line_height": "",
-                    "heading_size": "h6",
-                    "text_color": "hdt-s-text"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "heading_section_7TkEyV"
-              ]
-            }
-          },
-          "block_order": []
-        },
-        "article_comment_UU8Gy4": {
-          "type": "_article-comment",
-          "settings": {
-            "dis_pagination": 30
-          },
-          "blocks": {}
-        },
-        "sidebar_article": {
-          "type": "_sidebar_blog",
-          "static": true,
-          "settings": {},
-          "blocks": {
-            "blog_cate_NbfJpq": {
-              "type": "_blog-cate",
-              "settings": {
-                "widget_heading": "Blog categories",
-                "cat_link_list": "",
-                "count": false
+                "heading": "<p>Discover the Beauty of Saree Draping Styles from Different Regions of India</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h4",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
               },
               "blocks": {}
             },
-            "blog_post_7FQeDA": {
-              "type": "_blog-post",
+            "spacer_NbpCQh": {
+              "type": "spacer",
               "settings": {
-                "widget_heading": "Recent post",
-                "blog": "news",
-                "image_ratio": "adapt_image",
-                "image_size": true,
-                "blogs_count": 3,
-                "date": "%b %d"
+                "direction": false,
+                "space_lg": 10,
+                "space_md": 10,
+                "space": 10
               },
               "blocks": {}
             },
-            "blog_gallery_4pfgMj": {
-              "type": "_blog-gallery",
+            "text_QDEnmG": {
+              "type": "text",
               "settings": {
-                "widget_heading": "Gallery",
-                "link1": "",
-                "link2": "",
-                "link3": "",
-                "link4": "",
-                "link5": "",
-                "link6": "",
-                "link7": "",
-                "link8": "",
-                "link9": "",
-                "open_link": "_blank"
-              },
-              "blocks": {}
-            },
-            "blog_icon_box_edyGCc": {
-              "type": "_blog-icon-box",
-              "settings": {
-                "widget_heading": "Shipping & Delivery",
-                "icon_svg1": "truck",
-                "custom_svg1": "",
-                "iconbox_content1": "FREE SHIPPING_ Free shipping for all US orders",
-                "link_item1": "",
-                "icon_svg2": "headphones",
-                "custom_svg2": "",
-                "iconbox_content2": "SUPPORT 24/7_ We support 24 hours a day",
-                "link_item2": "",
-                "icon_svg3": "refesh-2",
-                "custom_svg3": "",
-                "iconbox_content3": "30 DAYS RETURN_ You have 30 days to return",
-                "link_item3": "",
-                "icon_svg4": "car",
-                "custom_svg4": "",
-                "iconbox_content4": "",
-                "link_item4": ""
-              },
-              "blocks": {}
-            },
-            "blog_tags_socials_9AmPLA": {
-              "type": "_blog-tags-socials",
-              "settings": {
-                "widget_heading": "Follow us",
-                "socials_style": "default",
-                "socials_size": "medium"
+                "text": "<p>One of the best attire is which every women can flaunt themselves is Saree. No matter whether you are an Indian, a British or an American, a saree draped on you make you look set apart from all kind of ethnic wears. Moreover, with the merge of western outfit wearing styles, Saree has a new outlook on the ramps, in films and in the red carpets of various events</p><p>Change is something never constant and when it is fashion, it is something well evident. However, one fashion trend that has held his foot firmly is saree. India is a saree trove and every region has a unique saree draping style. Thus, the fashion of saree never fades.</p><p>Fashion houses like Coco Chanel, Sabyasachi, Alexander McQueen all have picked up nine-yard wonder to make their models look elegant, timeless and chic whenever they walks. Whether it’s a international closet or a classical walkover, saree is the showstopper.</p><p> This nine-yard wonder has witnessed a number of draping style due to cultural diversity of the country. Even occasions have also influenced the draping of a saree. Let us take a quick look at our blog and the ways of wearing saree traditionally followed in India.</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-s-text",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
               },
               "blocks": {}
             }
           },
           "block_order": [
-            "blog_cate_NbfJpq",
-            "blog_post_7FQeDA",
-            "blog_gallery_4pfgMj",
-            "blog_icon_box_edyGCc",
-            "blog_tags_socials_9AmPLA"
+            "heading_LtbwQe",
+            "spacer_NbpCQh",
+            "text_QDEnmG"
           ]
+        },
+        "image-text-heading": {
+          "type": "section-heading",
+          "static": true,
+          "settings": {
+            "design_heading": "1",
+            "horizontal": false,
+            "alignment": "left",
+            "heading_gap": 15,
+            "margin_bottom": 30
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "article_image_D6Kd67",
-        "spacer_W7KYzg",
-        "article_title_aq9TAP",
-        "article_content_trtgKY",
-        "article_tags_3DXcjf",
-        "spacer_BnKFGV",
-        "article_infos_KeeJ6f",
-        "spacer_MwpTJJ",
-        "article_tag_shares_8cYm78",
-        "spacer_ixizBw",
-        "article_navigation_qz8RYg",
-        "article_related_8EHqHw",
-        "article_comment_UU8Gy4"
+        "image_text_column_edRjz3",
+        "image_text_col_KKYKi7"
       ],
-      "custom_css": [
-        ".hdt-article-content {color: rgb(var(--color-foreground2));}",
-        "em,blockquote {font-family: var(--f_family_3); font-style: italic;}"
-      ],
+      "name": "Image with text",
       "settings": {
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_rate": 75,
-        "sidebar_mode": "none",
-        "sidebar_position": "right",
-        "sidebar_size": "medium"
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "image_text_LHnpwJ": {
+      "type": "image_text",
+      "blocks": {
+        "image_text_column_P4Qtf9": {
+          "type": "_image-text-column",
+          "settings": {
+            "image_position": ""
+          },
+          "blocks": {
+            "image_8hCF9n": {
+              "type": "image",
+              "settings": {
+                "image_ratio": "adapt_image",
+                "img_effect": "none",
+                "b_effect": "none",
+                "custom_width": "full",
+                "image_w": 50,
+                "image_w_mb": 50
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_8hCF9n"
+          ]
+        },
+        "image_text_col_GEyp8Q": {
+          "type": "_image-text-col",
+          "settings": {
+            "alignment": "left",
+            "alignment_mb": "center",
+            "colors_by_block": false,
+            "color_scheme": "",
+            "align_center": true,
+            "padding_h": 0,
+            "padding_v": 0,
+            "padding_h_mb": 15,
+            "padding_v_mb": 15
+          },
+          "blocks": {
+            "heading_a8DtcD": {
+              "type": "heading",
+              "settings": {
+                "heading": "<h5>Established - 1995</h5>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h4",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "spacer_nKPyYq": {
+              "type": "spacer",
+              "settings": {
+                "direction": false,
+                "space_lg": 10,
+                "space_md": 10,
+                "space": 10
+              },
+              "blocks": {}
+            },
+            "text_ArYmxn": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Ecomus was founded in 1995 by Jane Smith, a fashion lover with apassion for timeless style. Jane had always been drawn to classicpieces that could be worn season after season, and she believed thatthere was a gap in the market for a store that focused solely on classicwomen's clothing. She opened the first store in a small town in NewEngland, where it quickly became a local favorite.</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-s-text",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            },
+            "spacer_jepNDy": {
+              "type": "spacer",
+              "settings": {
+                "direction": false,
+                "space_lg": 10,
+                "space_md": 10,
+                "space": 10
+              },
+              "blocks": {}
+            },
+            "countdown_wFibxj": {
+              "type": "_countdown",
+              "settings": {
+                "colors_by_block": false,
+                "color_scheme": "scheme-1",
+                "cd_style": "outline",
+                "rounded_full": false,
+                "space_item": 15,
+                "year": 2030,
+                "month": 4,
+                "day": 19,
+                "hour": 12,
+                "minute": 0,
+                "effect_cd": "rotate",
+                "uppercase": true,
+                "prepend_number": true,
+                "hide_on_complete": true,
+                "mess_complete": ""
+              },
+              "blocks": {}
+            },
+            "spacer_8MU6yE": {
+              "type": "spacer",
+              "settings": {
+                "direction": false,
+                "space_lg": 10,
+                "space_md": 10,
+                "space": 10
+              },
+              "blocks": {}
+            },
+            "button_CMVhDJ": {
+              "type": "button",
+              "settings": {
+                "label": "Shop now",
+                "link": "#",
+                "open_in_new_tab": true,
+                "full_width": false,
+                "btn_style": "",
+                "size": "m",
+                "font_weight": "normal",
+                "font_size_btn": 14,
+                "padding_btn": 30,
+                "min_width_btn": 100,
+                "min_width_dt_btn": 100,
+                "min_height_btn": 40,
+                "icon": "none",
+                "icon_position": "after",
+                "icon_height": 10,
+                "icon_spacing": 5
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_a8DtcD",
+            "spacer_nKPyYq",
+            "text_ArYmxn",
+            "spacer_jepNDy",
+            "countdown_wFibxj",
+            "spacer_8MU6yE",
+            "button_CMVhDJ"
+          ]
+        },
+        "image-text-heading": {
+          "type": "section-heading",
+          "static": true,
+          "settings": {
+            "design_heading": "1",
+            "horizontal": false,
+            "alignment": "left",
+            "heading_gap": 15,
+            "margin_bottom": 30
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "image_text_column_P4Qtf9",
+        "image_text_col_GEyp8Q"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
       }
     }
   },
   "order": [
     "hero_image_eNLNE9",
-    "main-article"
+    "image_text_4iTC7j",
+    "image_text_LHnpwJ"
   ]
 }
